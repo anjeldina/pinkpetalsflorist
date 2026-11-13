@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontak Kami | Pink Petals Florist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { 
+      background-color: #fff0f5; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4a4a4a;
+    }
+    .content {
+      padding: 50px 20px;
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(245, 166, 197, 0.4);
+    }
+    h1 {
+      color: #d6336c;
+      font-weight: 700;
+      margin-bottom: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    h1 i {
+      font-size: 2.5rem;
+      color: #f76e92;
+      transform: rotate(-15deg);
+    }
+    label.form-label {
+      font-weight: 600;
+      color: #d6336c;
+    }
+    button.btn-danger {
+      background-color: #f76e92;
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 50px;
+    }
+    button.btn-danger:hover {
+      background-color: #d6336c;
+    }
+    .info-contact {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .info-contact p {
+      margin-bottom: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #b8315a;
+    }
+    .social-links a {
+      color: #f76e92;
+      font-size: 1.8rem;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #d6336c;
+    }
+    input.form-control, textarea.form-control {
+      border-radius: 15px;
+      border: 2px solid #f5a6c5;
+      padding: 12px 15px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input.form-control:focus, textarea.form-control:focus {
+      border-color: #d6336c;
+      box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
+      outline: none;
+    }
+    .map-container {
+      margin-top: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(214, 51, 108, 0.3);
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    /* Toast Validasi */
+    .form-toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #d93682;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(214, 51, 108, 0.3);
+      font-weight: 600;
+      z-index: 9999;
+      display: none;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    .form-toast.show {
+      display: block;
+      opacity: 1;
+    }
+    .success-toast {
+      background-color: #d93682; 
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Notifikasi Validasi & Sukses -->
+<div id="formWarning" class="form-toast">Mohon lengkapi semua isian sebelum mengirim pesan.</div>
+<div id="formSuccess" class="form-toast success-toast">Terima kasih, pesan kamu telah dikirim!</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #f5a6c5;">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="index.html">
+      <i class="bi bi-droplet-half me-2"></i>Pink Petals florist
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="tentang.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link text-white active" aria-current="page" href="kontak.html">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="cart.html">Keranjang</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<section class="content">
+  <h1><i class="bi bi-chat-heart-fill"></i> Hubungi Kami</h1>
+
+  <form id="contactForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nama Lengkap</label>
+      <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="contoh@email.com" />
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Pesan</label>
+      <textarea class="form-control" id="message" rows="5" placeholder="Tulis pesan Anda di sini"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100">
+      <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+    </button>
+  </form>
+
+  <div class="info-contact">
+    <h5 class="mb-3 text-danger">Informasi Kontak</h5>
+    <p><i class="bi bi-telephone-fill"></i> +62 812 3456 7890</p>
+    <p><i class="bi bi-envelope-fill"></i> support@pinkpetalsflorist.com</p>
+    <p><i class="bi bi-geo-alt-fill"></i> Jl. Melati No. 123, Jakarta</p>
+
+    <div class="social-links mt-4">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+    </div>
+  </div>
+
+  <div class="map-container mt-5">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.123456789012!2d106.827153!3d-6.175110!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3645f12a1ef%3A0x8f9b7bbd36c9ed1a!2sMonas!5e0!3m2!1sid!2sid!4v1597681234567!5m2!1sid!2sid"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Lokasi Pink Petals Florist">
+    </iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-white text-center py-4 mt-5" style="background-color: #f5a6c5;">
+  <div class="container">
+    <p class="mb-1">&copy; 2025 Pink Petals florist. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Validasi Form dan Notifikasi -->
+<script>
+  const form = document.getElementById("contactForm");
+  const warningToast = document.getElementById("formWarning");
+  const successToast = document.getElementById("formSuccess");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      warningToast.classList.add("show");
+      setTimeout(() => {
+        warningToast.classList.remove("show");
+      }, 3000);
+    } else {
+      successToast.classList.add("show");
+      setTimeout(() => {
+        successToast.classList.remove("show");
+      }, 3000);
+      form.reset(); // Kosongkan form
+    }
+  });
+</script>
+
+</body>
+</html>
