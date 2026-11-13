@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk | Pink Petals Florist</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      color: #5a3e46;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #f5a6c5 !important;
+      box-shadow: 0 4px 8px rgba(245, 166, 197, 0.3);
+      font-weight: 600;
+    }
+
+    .navbar-brand i {
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .navbar-brand {
+      color: #fff !important;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    /* Main Section */
+    section.py-5 {
+      flex-grow: 1;
+    }
+
+    .card {
+      background: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(245, 166, 197, 0.25);
+      padding: 30px;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 30px rgba(245, 166, 197, 0.4);
+    }
+
+    #produk-nama {
+      color: #c94f73;
+      font-weight: 700;
+      font-size: 1.5rem;
+      /* diperkecil */
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    #produk-kode {
+      color: #aa5e70;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    #produk-deskripsi {
+      font-size: 0.9rem;
+      /* diperkecil */
+      line-height: 1.5;
+      color: #7a4a58;
+    }
+
+    #produk-detail {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      color: #7a4a58;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #produk-detail li {
+      margin-bottom: 0.4rem;
+    }
+
+    #produk-quote {
+      font-style: italic;
+      color: #c94f73;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Tambahkan ikon bunga sebelum quote */
+    #produk-quote::before {
+      content: "\f5d7";
+      font-family: "Bootstrap Icons";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.3rem;
+      color: #f080a8;
+      line-height: 1;
+    }
+
+    /* Harga */
+    #produk-harga-asli {
+      font-size: 0.9rem;
+      color: #bb7c90;
+      text-decoration: line-through;
+    }
+
+    #produk-harga-diskon {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #d6336c;
+    }
+
+    #produk-diskon {
+      font-size: 0.9rem;
+      padding: 0.2em 0.5em;
+      vertical-align: middle;
+    }
+
+    /* Gambar produk */
+    #produk-gambar {
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(245, 166, 197, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    #produk-gambar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(245, 166, 197, 0.6);
+    }
+
+    /* Tombol Kembali */
+    .btn-kembali {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      background-color: #c94f73;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.3rem;
+      border-radius: 30px;
+      box-shadow: 0 6px 15px rgba(201, 79, 115, 0.5);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      user-select: none;
+    }
+
+    .btn-kembali:hover {
+      background-color: #aa3e5a;
+      box-shadow: 0 8px 20px rgba(170, 62, 90, 0.7);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f5a6c5;
+      color: white;
+      padding: 20px 0;
+      font-weight: 500;
+      box-shadow: inset 0 4px 10px rgb(255 255 255 / 0.1);
+      margin-top: auto;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #aa3e5a;
+      text-decoration: underline;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767.98px) {
+      #produk-nama {
+        font-size: 1.3rem;
+      }
+
+      #produk-gambar {
+        max-height: 300px;
+      }
+    }
+  </style>
+
+  <script>
+    const produkList = {
+      "BKT001": {
+        nama: "Soft Bloom Harmony",
+        kode: "BKT001",
+        gambar: "bunga1.jpg",
+        deskripsi: `Rangkaian bunga hadir dalam balutan nuansa pastel yang manis dan elegan, 
+                            memadukan bunga peony biru, carnation pink, tulip kuning, dan aksen greenery dalam wrapping pink glossy yang mewah.`,
+        detail: [
+          "Warna dominan: Soft pink, putih, dan kuning",
+          "Ukuran: Medium (tinggi ±35 cm)",
+          "Finishing: Wrapping doff nude + pita satin ivory",
+          "Cocok untuk: Kado ulang tahun, wisuda, momen spesial"
+        ],
+        quote: "Karena setiap momen spesial pantas dirayakan dengan bunga.",
+        hargaAsli: "Rp95.000",
+        hargaDiskon: "Rp71.250",
+        diskon: "-25%"
+      },
+      "BKT002": {
+        nama: "Sunkissed Petals",
+        kode: "BKT002",
+        gambar: "bunga2.jpg",
+        deskripsi: `Buket bunga pilihan sempurna untuk kamu yang menyukai keindahan dalam kelembutan.
+                            Dihiasi dengan bunga daisy putih dan pink, mawar mini, lavender ungu, dan aksen bunga kancing pink,
+                            buket ini dibungkus dalam tulle putih elegan dan pita satin lembut. Komposisi warna pastel menjadikan buket ini cocok
+                            sebagai hadiah yang manis dan penuh kasih.`,
+        detail: [
+          "Warna dominan: Putih, pink pastel, ungu muda",
+          "Ukuran: Medium (tinggi ±30 cm)",
+          "Finishing: Tulle putih, pita satin, wrapping transparan glossy",
+          "Cocok untuk: Hadiah semangat, apresiasi, dan surprise"
+        ],
+        quote: "Sebarkan sinar hangat dengan bunga pilihan.",
+        hargaAsli: "Rp120.000",
+        hargaDiskon: "Rp90.000",
+        diskon: "-25%"
+      },
+      "BKT003": {
+        nama: "Peachy Love",
+        kode: "BKT003",
+        gambar: "bunga3.jpg",
+        deskripsi: `Buket bunga  memancarkan kelembutan dan keanggunan dalam setiap helai kelopaknya.
+                            Dengan balutan wrapping berbentuk sayap kupu-kupu transparan dan warna dominan pink pastel, bunga ini memberikan nuansa romantis dan imajinatif yang tak terlupakan.
+                            Terdiri dari kombinasi bunga peony, mawar, krisan, dan aster berwarna pink cerah dan lembut, cocok untuk mengungkapkan cinta, harapan, dan ketulusan.`,
+        detail: [
+          "Warna dominan: Pink pastel dan fuchsia",
+          "Ukuran: Large (tinggi ±40 cm)",
+          "Finishing: Sayap akrilik transparan & pita satin elegan",
+          "Cocok untuk: Anniversary, lamaran, atau kejutan romantis"
+        ],
+        quote: "Cinta tumbuh indah seperti kelopak bunga.",
+        hargaAsli: "Rp150.000",
+        hargaDiskon: "Rp112.500",
+        diskon: "-25%"
+      },
+      "BKT004": {
+        nama: "Soft Serenade",
+        kode: "BKT004",
+        gambar: "bunga4.jpg",
+        deskripsi: `buket bunga dengan nuansa warna pastel yang menenangkan dan elegan.
+                            Kombinasi lili pink cerah, mawar pastel, tulip lembut, dan bunga biru segar menciptakan harmoni warna yang lembut dan menawan. 
+                            Dikemas dengan jaring putih dan pita satin yang anggun, rangkaian ini cocok untuk memberikan sentuhan manis pada momen spesial.`,
+        detail: [
+          "Warna dominan: Pink pastel, biru langit, dan putih lembut",
+          "Ukuran: Small (tinggi ±40 cm)",
+          "Finishing: Kain jaring putih & pita satin panjang",
+          "Cocok untuk: Sahabat, ucapan terima kasih, atau ucapan semangat"
+        ],
+        quote: "Kelembutan warna, kehangatan makna.",
+        hargaAsli: "Rp79.999",
+        hargaDiskon: "Rp59.999",
+        diskon: "-25%"
+      },
+      "GFT001": {
+        nama: "Sweet Sparkle",
+        kode: "GFT001",
+        gambar: "gift1.jpg",
+        deskripsi: `paket hadiah elegan yang memadukan sentuhan glamor dan kelembutan feminin.
+                            Di dalam box ini terdapat beragam aksesori cantik: sepasang anting mutiara berbentuk hati, kalung dengan liontin hati, cincin manis, 
+                            bando scrunchie satin mengilap, serta kartu ucapan eksklusif. Didesain dengan kemasan estetik bernuansa pink pastel, 
+                            cocok untuk menyampaikan kasih sayang dan perhatian dalam momen spesial.`,
+        detail: [
+          "Isi: Anting mutiara, kalung hati, cincin, scrunchie, kartu ucapan",
+          "Warna dominan: Pink pastel dan silver",
+          "Finishing: Pink pastel dan silver",
+          "Cocok untuk: Kado teman, bridesmaid, atau diri sendiri"
+        ],
+        quote: "Hadiah kecil yang memberi senyum besar.",
+        hargaAsli: "Rp98.999",
+        hargaDiskon: "Rp74.249",
+        diskon: "-25%"
+      },
+      "GFT002": {
+        nama: "Birthday Bliss Box",
+        kode: "GFT002",
+        gambar: "gift2.jpg",
+        deskripsi: `gift box ulang tahun yang dirancang secara personal dan penuh kejutan manis.
+                            Dihiasi dengan banner bertuliskan "Happy 19th Birthday", foto kenangan yang digantung dengan tali rami,
+                            serta isi yang penuh cinta seperti kartu ucapan ilustratif, camilan, cokelat, dan mini bouquet bunga kering.
+                            Cocok untuk diberikan pada sahabat, pacar, atau anggota keluarga yang berulang tahun.`,
+        detail: [
+          "Isi: Banner dekorasi, foto kenangan, kartu ucapan, camilan, mini buket bunga, cokelat",
+          "Warna dominan: Pink pastel dan cokelat kraft",
+          "Finishing: Box kraft dengan serutan kertas dan elemen handmade",
+          "Cocok untuk: Kado ulang tahun, kado sahabat"
+        ],
+        quote: "Rayakan ulang tahun dengan kejutan istimewa.",
+        hargaAsli: "Rp75.000",
+        hargaDiskon: "Rp56.250",
+        diskon: "-25%"
+      },
+      "GFT003": {
+        nama: "Aurora Gift",
+        kode: "GFT003",
+        gambar: "gift3.jpg",
+        deskripsi: `gift box eksklusif bertema pink yang dirancang khusus untuk merayakan momen spesial dan memberikan kenyamanan personal.
+                            Set ini berisi koleksi perawatan diri seperti kuas makeup premium, scrunchie satin, sabun bunga, eye patch, serta pouch brush custom nama.
+                            Tersedia juga kartu ucapan cantik yang menyampaikan pesan manis untuk penerima hadiah.
+                            Sangat cocok untuk diberikan kepada sahabat, pasangan, atau diri sendiri sebagai bentuk self-love.`,
+        detail: [
+          "Isi: Set kuas makeup, scrunchie satin, sabun bunga, eye patch, tempat perhiasan, kartu ucapan",
+          "Warna dominan: Pink blush dan putih elegan",
+          "Finishing: Box kraft dengan serutan kertas dekoratif",
+          "Cocok untuk: Kado ulang tahun, bridesmaid gift, hampers spesial, atau self-care kit"
+        ],
+        quote: "Karena merawat diri adalah hadiah terbaik untuk jiwa dan raga.",
+        hargaAsli: "Rp97.500",
+        hargaDiskon: "Rp73.125",
+        diskon: "-25%"
+      },
+      "GFT004": {
+        nama: "Elegant Petal Single",
+        kode: "GFT004",
+        gambar: "gift4.jpg",
+        deskripsi: `jedai rambut berbentuk bunga plumeria dengan tampilan glossy dan warna-warna cerah yang memikat.
+                            Setiap jedai dibungkus dalam kemasan buket mini bernuansa pink, lengkap dengan pita satin dan kartu ucapan—membuatnya cocok dijadikan hadiah atau souvenir yang manis.
+                            Terbuat dari bahan resin berkualitas tinggi yang tahan lama dan tidak mudah patah.`,
+        detail: [
+          "Isi: 1 pcs jedai bunga dalam kemasan buket dekoratif",
+          "Varian warna bunga: Pink, merah, putih, kuning, hijau, cokelat (acak)",
+          "Bahan: Resin transparan dan kuat",
+          "Finishing: Plastik motif bunga, pita pink, dan kartu ucapan",
+          "Cocok untuk: Hadiah sahabat, souvenir ulang tahun, hampers, parcel wisuda"
+        ],
+        quote: "Tampil cantik dan manis dengan sentuhan bunga di rambutmu.",
+        hargaAsli: "Rp25.000",
+        hargaDiskon: "Rp18.750",
+        diskon: "-25%"
+      }
+    };
+
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+      const produk = produkList[id];
+      if (!produk) {
+        document.body.innerHTML = '<div class="container py-5 text-center"><h2>Produk tidak ditemukan</h2></div>';
+        return;
+      }
+      document.title = produk.nama + ' | Pink Petals Florist';
+      document.getElementById('produk-nama').textContent = produk.nama;
+      document.getElementById('produk-kode').textContent = produk.kode;
+      document.getElementById('produk-gambar').src = produk.gambar;
+      document.getElementById('produk-gambar').alt = produk.nama;
+      document.getElementById('produk-deskripsi').innerHTML = produk.deskripsi;
+      document.getElementById('produk-detail').innerHTML = produk.detail.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('produk-quote').textContent = produk.quote;
+      document.getElementById('produk-harga-asli').textContent = produk.hargaAsli;
+      document.getElementById('produk-harga-diskon').textContent = produk.hargaDiskon;
+      document.getElementById('produk-diskon').textContent = produk.diskon;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="index.html">
+        <i class="bi bi-droplet-half me-2"></i>Pink Petals Florist
+      </a>
+    </div>
+  </nav>
+
+  <!-- Produk Detail -->
+  <section class="py-5">
+    <div class="container">
+      <a href="index.html" class="btn-kembali mb-4">
+        <i class="bi bi-arrow-left-circle"></i> Kembali ke Beranda
+      </a>
+      <div class="row justify-content-center align-items-center flex-column flex-md-row">
+        <!-- Gambar Produk -->
+        <div class="col-12 col-md-6 mb-4">
+          <img id="produk-gambar" class="img-fluid rounded-4 shadow-lg w-100" alt="Gambar Produk" />
+        </div>
+        <!-- Detail Produk -->
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 id="produk-nama" class="fw-bold mb-2 text-center text-md-start"></h2>
+              <p class="text-muted mb-3 text-center text-md-start">
+                Kode Produk: <strong id="produk-kode"></strong>
+              </p>
+              <p id="produk-deskripsi" class="mb-3 text-justify"></p>
+              <ul id="produk-detail" class="mb-3"></ul>
+              <blockquote id="produk-quote" class="fst-italic mb-3 text-center"></blockquote>
+              <div class="mb-3 text-center text-md-start">
+                <p id="produk-harga-asli" class="mb-1"></p>
+                <h4 class="text-danger fw-bold">
+                  <span id="produk-harga-diskon"></span>
+                  <span id="produk-diskon" class="badge bg-danger ms-2"></span>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 Pink Petals Florist. All rights reserved.</p>
+      <small>
+        Ikuti kami di:
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i> Instagram</a>,
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i> Facebook</a>, dan
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i> Twitter</a>
+      </small>
+    </div>
+  </footer>
+
+</body>
+
+</html>

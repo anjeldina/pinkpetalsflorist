@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Petals florist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #f5a6c5;">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="#"><i class="bi bi-droplet-half me-2"></i>Pink Petals
+        florist</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Kotak Pencarian -->
+        <form class="d-flex mx-auto w-50 search-form" role="search">
+          <input class="form-control me-2 rounded-pill" type="search" placeholder="Cari produk favoritmu..."
+            aria-label="Search" />
+          <button class="btn rounded-pill btn-search" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+        <!-- Navigasi -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#products" title="Produk"><i class="bi bi-shop"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="tentang.html" title="Tentang Kami"><i
+                class="bi bi-info-circle"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="kontak.html" title="Kontak"><i class="bi bi-envelope"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="wishlist.html" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="cart.html"><i class="bi bi-cart3 me-1"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center d-flex align-items-center justify-content-center"
+    style="background: url('logoo.jpg') no-repeat center center/cover; height: 60vh; color: white; position: relative;">
+    <div class="container position-relative z-2">
+      <h1 class="slogan-fancy animate-fadein">Where Flowers Whisper, and Gifts Speak.</h1>
+      <p class="lead animate-fadein delay-1">Karena setiap bunga dan hadiah punya cerita untuk disampaikan</p>
+    </div>
+    <div style="position: absolute; inset: 0; background-color: rgba(0,0,0,0.4); z-index: 1;"></div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="text-center py-3 text-white" style="background-color: #f5a6c5;">
+    <div class="container">
+      <h5 class="mb-0"> Spesial Bulan Juli: Dapatkan diskon hingga 25% untuk produk pilihanmu! </h5>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="products" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Koleksi Pink Petals</h2>
+      <!-- Kategori Tabs -->
+      <ul class="nav nav-pills justify-content-center mb-4" id="categoryTabs">
+        <li class="nav-item">
+          <button class="nav-link active" data-category="all">Semua</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-category="buket">Buket Bunga</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-category="gift">Gift</button>
+        </li>
+      </ul>
+      <div class="row">
+
+        <!-- Produk 1 -->
+        <div class="col-md-3 mb-4 product-item" data-category="buket">
+          <div class="card">
+            <img src="bunga1.jpg" class="card-img-top" alt="bunga" />
+            <div class="card-body">
+              <h5 class="card-title">Soft Bloom Harmony</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp95.000</span><br />
+                <span class="fw-bold text-danger">Rp71.250</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=BKT001" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="BKT001" data-name="Soft Bloom Harmony"
+                data-price="71250" data-image="bunga1.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="BKT001"
+                data-name="Soft Bloom Harmony" data-image="bunga1.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="col-md-3 mb-4 product-item" data-category="buket">
+          <div class="card">
+            <img src="bunga2.jpg" class="card-img-top" alt="bunga" />
+            <div class="card-body">
+              <h5 class="card-title">Sunkissed Petals</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp120.000</span><br />
+                <span class="fw-bold text-danger">Rp90.000</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=BKT002" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="BKT002" data-name="Sunkissed Petals"
+                data-price="90000" data-image="bunga2.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="BKT002"
+                data-name="sunkissed petals" data-image="bunga2.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="col-md-3 mb-4 product-item" data-category="buket">
+          <div class="card">
+            <img src="bunga3.jpg" class="card-img-top" alt="bunga" />
+            <div class="card-body">
+              <h5 class="card-title">Peachy Love</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp150.000</span><br />
+                <span class="fw-bold text-danger">Rp112.500</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=BKT003" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="BKT003" data-name="peachy love"
+                data-price="112500" data-image="bunga3.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="BKT003" data-name="Peachy Love"
+                data-image="bunga3.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="col-md-3 mb-4 product-item" data-category="buket">
+          <div class="card">
+            <img src="bunga4.jpg" class="card-img-top" alt="bunga" />
+            <div class="card-body">
+              <h5 class="card-title">Soft Serenade</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp79.999</span><br />
+                <span class="fw-bold text-danger">Rp59.999</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=BKT004" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="BKT004" data-name="Soft Serenade"
+                data-price="59999" data-image="bunga4.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="BKT004"
+                data-name="soft serenade" data-image="bunga4.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 5 -->
+        <div class="col-md-3 mb-4 product-item" data-category="gift">
+          <div class="card">
+            <img src="gift1.jpg" class="card-img-top" alt="gift" />
+            <div class="card-body">
+              <h5 class="card-title">Sweet Sparkle</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp98.999</span><br />
+                <span class="fw-bold text-danger">Rp74.249</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=GFT001" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="GFT001" data-name="Sweet Sparkle"
+                data-price="74249" data-image="gift1.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="GFT001"
+                data-name="sweet sparkle" data-image="gift1.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 6 -->
+        <div class="col-md-3 mb-4 product-item" data-category="gift">
+          <div class="card">
+            <img src="gift2.jpg" class="card-img-top" alt="gift" />
+            <div class="card-body">
+              <h5 class="card-title">Birthday Bliss Box</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp75.000</span><br />
+                <span class="fw-bold text-danger">Rp56.250</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=GFT002" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="GFT002" data-name="Birthday Bliss Box"
+                data-price="56250" data-image="gift2.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="GFT002"
+                data-name="birthday bliss box" data-image="gift2.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 7 -->
+        <div class="col-md-3 mb-4 product-item" data-category="gift">
+          <div class="card">
+            <img src="gift3.jpg" class="card-img-top" alt="gift" />
+            <div class="card-body">
+              <h5 class="card-title">Aurora Gift</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp97.500</span><br />
+                <span class="fw-bold text-danger">Rp73.125</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=GFT003" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="GFT003" data-name="aurora gift" data-price="73125"
+                data-image="gift3.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="GFT003" data-name="Aurora Gift"
+                data-price="73125" data-image="gift3.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 8 -->
+        <div class="col-md-3 mb-4 product-item" data-category="gift">
+          <div class="card">
+            <img src="gift4.jpg" class="card-img-top" alt="gift" />
+            <div class="card-body">
+              <h5 class="card-title">Elegant Petal Single</h5>
+              <p class="card-text mb-1">
+                <span class="text-muted text-decoration-line-through">Rp25.000</span><br />
+                <span class="fw-bold text-danger">Rp18.750</span>
+              </p>
+              <span class="badge bg-pink mb-2">-25%</span>
+              <!-- Ubah link detail di sini -->
+              <a href="detail.html?id=GFT004" class="btn btn-outline-pink w-100"><i class="bi bi-eye me-1"></i>Lihat
+                Detail</a>
+              <button class="btn btn-pink w-100 add-to-cart" data-id="GFT004" data-name="Elegant Petal Single"
+                data-price="18750" data-image="gift4.jpg">
+                <i class="bi bi-cart3 me-1"></i>Tambah
+              </button>
+              <button class="btn btn-outline-danger w-100 add-to-wishlist mt-2" data-id="GFT004"
+                data-name="elegant petal single" data-price="18750" data-image="gift4.jpg">
+                <i class="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Kategori Produk -->
+  <script>
+    const tabs = document.querySelectorAll('#categoryTabs .nav-link');
+    const items = document.querySelectorAll('.product-item');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const kategori = tab.getAttribute('data-category');
+
+        items.forEach(item => {
+          if (kategori === 'all' || item.getAttribute('data-category') === kategori) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- 🔍 Script Fungsi Pencarian Produk -->
+  <script>
+    const searchInput = document.querySelector(".search-form input[type='search']");
+    const searchForm = document.querySelector(".search-form");
+
+    searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const query = searchInput.value.toLowerCase();
+      const items = document.querySelectorAll(".product-item");
+
+      items.forEach(item => {
+        const name = item.querySelector(".card-title").innerText.toLowerCase();
+        if (name.includes(query)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+  <!-- Toast notif keranjang -->
+  <div id="toast">Produk berhasil ditambahkan ke keranjang!</div>
+
+  <!-- Toast notif wishlist -->
+  <div id="wishlist-toast" class="toast-notif">Produk disimpan ke wishlist!</div>
+
+  <!-- ✅ Tambahkan skrip tambah ke keranjang di sini -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".add-to-cart");
+
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const product = {
+            id: button.dataset.id,
+            name: button.dataset.name,
+            price: parseInt(button.dataset.price),
+            image: button.dataset.image
+          };
+
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.push(product);
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          const toast = document.getElementById('toast');
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2500);
+
+        });
+      });
+    });
+  </script>
+  <!-- ✅ Tambahkan skrip wishlist di bawah ini -->
+  <script>
+    function showWishlistToast() {
+      const toast = document.getElementById('wishlist-toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    document.querySelectorAll('.add-to-wishlist').forEach(button => {
+      button.addEventListener('click', () => {
+        const product = {
+          id: button.dataset.id,
+          name: button.dataset.name,
+          image: button.dataset.image
+        };
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        // Cek apakah sudah ada
+        const exists = wishlist.some(item => item.id === product.id);
+        if (!exists) {
+          wishlist.push(product);
+          localStorage.setItem('wishlist', JSON.stringify(wishlist));
+          showWishlistToast();
+        } else {
+          const toast = document.getElementById('wishlist-toast');
+          toast.innerText = "Produk ini sudah ada di wishlist kamu!";
+          toast.classList.add('show');
+          setTimeout(() => {
+            toast.classList.remove('show');
+            toast.innerText = "Produk disimpan ke wishlist!"; // reset teks aslinya
+          }, 2500);
+        }
+      });
+    });
+  </script>
+
+  <script src="assets/script.js"></script>
+</body>
+<footer class="text-white pt-5 pb-4 mt-5" style="background-color: #f5a6c5;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Informasi -->
+      <div class="col-md-3 col-6">
+        <h5 class="fw-bold">Informasi</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Tentang Kami</a></li>
+          <li><a href="kontak.html" class="text-white text-decoration-none">Hubungi Kami</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lokasi Toko</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Kebijakan Privasi</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Cara Pembayaran</a></li>
+        </ul>
+      </div>
+
+      <!-- Metode Pembayaran -->
+      <div class="col-md-3 col-6">
+        <h5 class="fw-bold">Metode Pembayaran</h5>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <img src="https://img.icons8.com/color/48/visa.png" width="38" alt="Visa">
+          <img src="https://img.icons8.com/color/48/mastercard.png" width="38" alt="Mastercard">
+          <img src="bca.jpg" alt="BCA" width="40">
+          <img src="bri.jpg" alt="BRI" width="40">
+          <img src="dana.jpg" alt="DANA" width="40">
+          <img src="ovo.jpg" alt="OVO" width="40">
+          <img src="gopay.jpg" alt="GoPay" width="40">
+        </div>
+      </div>
+
+      <!-- Bagian Aplikasi Mobile di Footer -->
+      <div class="col-md-3 col-6">
+        <h5 class="fw-bold">Aplikasi Mobile</h5>
+        <p class="small">Scan atau klik untuk unduh aplikasi:</p>
+
+        <!-- Gambar QR Code -->
+        <img src="qrcode.jpg" alt="QR Code Pink Petals" width="100" class="mb-2">
+
+        <!-- Tombol Store Custom -->
+        <div class="d-flex gap-2">
+          <a href="#"><img src="app2.jpg" alt="App Store" width="100"></a>
+        </div>
+      </div>
+
+      <!-- Customer Care -->
+      <div class="col-md-3 col-6">
+        <h5 class="fw-bold">Customer Care</h5>
+        <p class="small mb-1">Email: <a href="mailto:cs@pinkpetals.com"
+            class="text-white text-decoration-none">cs@pinkpetals.com</a></p>
+        <p class="small mb-1">WhatsApp: <a href="https://wa.me/6281234567890"
+            class="text-white text-decoration-none">0812-3456-7890</a></p>
+        <p class="small mb-0">Jam Operasional: 08.00 - 20.00 WIB</p>
+      </div>
+
+    </div>
+    <hr class="border-white mt-4">
+    <div class="text-center">
+      <p class="mb-1 small">&copy; 2025 <strong>Pink Petals florist</strong>. All rights reserved.</p>
+      <p class="small mb-0">
+        Ikuti kami:
+        <a href="#" class="text-white text-decoration-underline"><i class="bi bi-instagram"></i> Instagram</a>,
+        <a href="#" class="text-white text-decoration-underline"><i class="bi bi-facebook"></i> Facebook</a>,
+        <a href="#" class="text-white text-decoration-underline"><i class="bi bi-twitter"></i> Twitter</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+</html>
